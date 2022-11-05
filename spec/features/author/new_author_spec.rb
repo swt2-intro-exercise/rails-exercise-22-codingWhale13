@@ -21,4 +21,9 @@ describe 'New author page', type: :feature do
     page.fill_in 'author[homepage]',	with: 'https://en.wikipedia.org/wiki/Edsger_W._Dijkstra' 
     find('input[type="submit"]').click
   end
+
+  it 'should only be possible to save new author if last name is provided' do
+    @author = Author.new(first_name: 'Alan', homepage: 'http://wikipedia.org/Alan_Turing')
+    expect(@author).to_not be_valid
+  end
 end
