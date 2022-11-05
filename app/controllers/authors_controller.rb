@@ -1,12 +1,32 @@
 class AuthorsController < ApplicationController
+    def index
+
+    end
+
+    def show
+        @author = Author.find(params[:id])
+    end
+    
     def new
 
     end
     
+    def edit
+
+    end
+
     def create
         @author = Author.new(author_params)
         @author.save
         redirect_to root_path, notice: "Success!"
+    end
+
+    def update
+
+    end
+
+    def destroy
+
     end
 
     private
