@@ -3,7 +3,8 @@ class PapersController < ApplicationController
 
   # GET /papers
   def index
-    @papers = Paper.where("year = ?", params[:year]) if params[:year].present?
+    @papers = Paper.all
+    @papers = @papers.where("year = ?", params[:year]) if params[:year].present?
   end
 
   # GET /papers/1
