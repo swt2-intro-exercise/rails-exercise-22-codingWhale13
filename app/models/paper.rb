@@ -5,5 +5,5 @@ class Paper < ApplicationRecord
     validates :venue, presence: true
     validates :year, presence: true, numericality: { only_integer: true}
 
-    scope :published_i, -> (year){ where('year = ?', year) }
+    scope :published_in, -> (year){ where('year = ?', year) }
 end
